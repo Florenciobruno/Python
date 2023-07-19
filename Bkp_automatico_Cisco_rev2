@@ -3,9 +3,10 @@ import getpass #entrada de senha portatil
 import telnetlib #implementa protocolo telnet
 
 print("Hello, World!")
+print("Bem vindo ao operador de backup")
 
 host = "localhost"
-user= input ("Entre com sua conta remota.")
+user= input ("Entre com sua conta remota para continuar:")
 Password= getpass.getpass()
 
 f = open ("MeusSwitchs.txt")
