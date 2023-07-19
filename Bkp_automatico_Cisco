@@ -1,0 +1,54 @@
+
+print("Hello, World!")
+
+import getpass(#entrada de senha portatil)
+import telnetlib (#implementa protocolo telnet)
+
+host = "localhost"
+user= input ("Entre com sua conta remota.")
+Password= getpass.getpass()
+
+f = open ("MeusSwitchs.txt")
+
+for IP in F:
+    IP = IP.strip (#Remove todos os sinais em branco, iniciais e finais)
+    print ("Coletando dados de Backup do Switch, aguarde")
+    host = IP
+    tn= telnetlib.telnet (host)
+    tn.read_until (b"username: ")   (#ler telnet até...)
+    tn.write(user.encode('ASCII')+ b"\n")
+    if password:
+        tn.read_until (b"password: ")
+        tn.write (password.encode ('ASCII')+b"\n")
+        
+        
+        #Comandos para realizar o bkp dos equip.
+        
+        tn.write (b"terminal leng 0\n")
+        tn.write (b"show run")
+        tn.write (b'exit\n')
+        
+        readoutput = tn.read_all ()
+        print (readoutput.decode('ASCII')) (#ASCII PADRONIZA A FORMA COMO OS COMPUTADORES ENTENDEM E REPRESENTAM LETRAS, NUMEROS, SINAIS DIVEROSE ALGUNS CODIGOS DE CONTROLE)
+        
+        saveoutput = open ("switch - " + host, "w" )
+        saveoutput.write (readoutput.decode('ASCII'))
+        saveoutput.write ("n")
+        saveoutput.close 
+        
+        win32.Dispatch ('outlook.application')
+        email = outlook.createItem(0)
+        #configuracao do email de destino
+        email.To = exemplo@bkpcisco.com
+        email.subject ("BKP Automatico Cisco")
+        email.htmlbody = F " "
+        <p> Esta e a copia de seguranca do bkp cisco</p>   
+        
+        #anexo =
+        
+        "c://users/senai/downloads/arquivo.txt"
+         
+        #email.attachments.add (anexo)
+        
+        email.send ()
+        print ("email enviado")
