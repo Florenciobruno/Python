@@ -2,13 +2,23 @@
 import getpass #entrada de senha portatil
 import telnetlib #implementa protocolo telnet
 
+
 print("Hello, World!")
 print("Bem vindo ao operador de backup")
-
 host = "localhost"
-user= input ("Entre com sua conta remota para continuar:")
-Password= getpass.getpass()
+user= input ("Entre com sua conta para continuar: ")
 
+if user != "":
+    print ("Olá") 
+    string=user
+    cap_string= string.capitalize()
+    print(cap_string)
+    
+    
+if user != "":
+    print ("Por favor, digite seu")
+    
+Password= getpass.getpass()
 f = open ("MeusSwitchs.txt")
 
 for IP in f:
@@ -18,6 +28,8 @@ for IP in f:
     tn= telnetlib.telnet (host)
     tn.read_until (b"username: ")   #ler telnet até...
     tn.write(user.encode('ASCII')+ b"\n")
+    
+    
     if Password:
         tn.read_until (b"password: ")
         tn.write (password.encode ('ASCII')+b"\n")
