@@ -57,7 +57,7 @@ for IP in f:
         
         #configuracao do email de destino
         
-        email.To = florencio.brunosilva@outlook.com
+        email.To = email@outlook.com
         email.subject ("BKP Automatico Cisco")
         email.html.body = f ("")
         
