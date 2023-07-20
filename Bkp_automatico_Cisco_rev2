@@ -1,9 +1,10 @@
-
 import getpass #entrada de senha portatil
 import telnetlib #implementa protocolo telnet
-
+meuArquivo = open("teste.txt", "r")
+print(meuArquivo.readline())
 
 print("Hello, World!")
+
 print("Bem vindo ao operador de backup")
 host = "localhost"
 user= input ("Entre com sua conta para continuar: ")
@@ -13,13 +14,15 @@ if user != "":
     string=user
     cap_string= string.capitalize()
     print(cap_string)
-    
+    #print (user)
     
 if user != "":
     print ("Por favor, digite seu")
     
 Password= getpass.getpass()
-f = open ("MeusSwitchs.txt")
+
+meuArquivo  
+
 
 for IP in f:
     IP = IP.strip #Remove todos os sinais em branco, iniciais e finais
@@ -54,14 +57,12 @@ for IP in f:
         
         #configuracao do email de destino
         
-        email.To = exemplo@bkpcisco.com
+        email.To = florencio.brunosilva@outlook.com
         email.subject ("BKP Automatico Cisco")
-        email.html.body = f (" ")
+        email.html.body = f ("")
         
-        #anexo =
-        
-        "c://users/senai/downloads/arquivo.txt"
-         
+             
+                  
         #email.attachments.add (anexo)
         
         email.send ()
